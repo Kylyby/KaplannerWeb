@@ -1,0 +1,152 @@
+/*
+cores: 
+roxo do fundo: #0F0C24
+fundo do calendario: #E2DAF8
+fundo do texto do calendario: #E3DDF4
+*/ 
+
+@font-face {
+  font-family: Gilgan;
+  src: url("assets/Gilgan.otf");
+}
+
+html {
+  font-family: Gilgan;
+  background-image: url('assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  align-self: center;
+  padding: 1cm;
+}
+
+.topo {
+  justify-content: space-between;
+  text-align: center;
+  font-size: 200%;
+}
+
+/*descobrir como alterar a margem entre o ativo e desativo sem mudar o form*/
+.ativo {
+  color: white;
+  display: inline;
+  border-bottom: solid 2px white;
+  text-decoration: none;
+  margin-right: 2em;
+}
+
+.desativo {
+  color: white;
+  display: inline;
+  border-bottom: dashed 2px white;
+  text-decoration: none;
+  margin-left: 2em;
+}
+
+.ativoCad {
+  color: white;
+  display: inline;
+  border-bottom: solid 2px white;
+  text-decoration: none;
+  margin-left: 2em;
+}
+
+.desativoCad {
+  color: white;
+  display: inline;
+  border-bottom: dashed 2px white;
+  text-decoration: none;
+  margin-right: 2em;
+}
+
+.input-cad {
+  color: white;
+  background-color: #FFFFFF60;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 1.5em;
+  margin-bottom: 20px;
+  font-size: 200%;
+}
+
+form {
+  margin-top: 10%;
+  align-self: center;
+}
+
+label {
+  color: #E3DDF4;
+  font-size: 200%;
+}
+
+.butCad {
+  background-color: #0F0C24;
+  border-radius: 1cm;
+  padding: .2cm;
+  border: none;
+  color: white;
+  font-family: inherit;
+  margin-top: 12%;
+  align-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 200%;
+}
+
+.butCad:hover {
+  background-color: white;
+  color: black;
+}
+
+.container{
+  position: relative;
+  width: 850px;
+  height: 1200px;
+  min-height: 850px;
+  margin: 0 auto;
+  padding: 5px;
+  color: #fff;
+  display: flex;
+  border-radius: 0px;
+  background-color:#fff;
+}
+
+.esquerda{
+  width: 100%;
+  padding: 0 20px;
+}
+
+.calendario{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color:#fff;
+  border-radius: 0px;
+  background-color: #e2daf8;
+}
+
+.calendario .mes{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}

@@ -1,0 +1,51 @@
+CREATE SCHEMA IF NOT EXISTS mydb DEFAULT CHARACTER SET utf8 ;
+USE mydb ;
+
+CREATE TABLE IF NOT EXISTS mydb.usuario (
+  id_usuario INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(15) NOT NULL,
+  sobrenome VARCHAR(35) NOT NULL,
+  email VARCHAR(40) NOT NULL,
+  senha VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id_usuario))
+ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS mydb.agendamento (
+  id_agendamento INT NOT NULL AUTO_INCREMENT,
+  hora_agendamento VARCHAR(45) NULL,
+  data_agendamento VARCHAR(45) NULL,
+  agendador INT NOT NULL,
+  PRIMARY KEY (id_agendamento),
+  INDEX fk_agendamento_usuario_idx (agendador ASC) VISIBLE,
+  CONSTRAINT fk_agendamento_usuario
+    FOREIGN KEY (agendador)
+    REFERENCES mydb.usuario (id_usuario)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+
+CREATE TABLE IF NOT EXISTS mydb.compromisso (
+  id_agendamento INT NOT NULL,
+  id_compromisso INT NOT NULL AUTO_INCREMENT,
+  nome_compromisso VARCHAR(20) NOT NULL,
+  id_tipocompromisso INT NOT NULL,
+  status_c TINYINT NULL DEFAULT 1,
+  prazo INT NULL,
+  hora_comp DATETIME NULL,
+  descr VARCHAR(120) NULL,
+  PRIMARY KEY (id_compromisso),
+  INDEX fk_compromisso_agendamento1_idx (id_agendamento ASC) VISIBLE,
+  CONSTRAINT fk_compromisso_agendamento1
+    FOREIGN KEY (id_agendamento)
+    REFERENCES mydb.agendamento (id_agendamento)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
