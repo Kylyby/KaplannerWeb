@@ -1,0 +1,49 @@
+@font-face {
+    font-family: Gilgan;
+    src: url("assets/Gilgan.otf");
+  }
+
+html {
+    background-image: url('assets/background.png');
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: 50% 50%;
+    font-family: Gilgan;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#form_field {
+    width: 70vw;
+    height: 70vh;
+    background-color: #E3DDF4;
+    border-width: 0.35em;
+    border-color: #686295;
+    border-style: solid;
+    border-radius: 1.5em;
+
+}
+
+#div_form {
+    display: flex;
+}
+
+#form1 {
+    padding-right: 1vw;
+}
+
+#form2 {
+    padding-left: 1vw;
+}
+
+input {
+    width: 100%;
+}
